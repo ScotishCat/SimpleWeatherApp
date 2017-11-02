@@ -10,6 +10,7 @@
 		D0141E591FAB4DC70067D977 /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141E581FAB4DC70067D977 /* WeatherProvider.swift */; };
 		D0141E5E1FAB56E80067D977 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141E5D1FAB56E80067D977 /* WeatherAPI.swift */; };
 		D0141E611FAB57420067D977 /* WeatherJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141E601FAB57420067D977 /* WeatherJSON.swift */; };
+		D0141E651FAB5DAE0067D977 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0141E641FAB5DAE0067D977 /* MapKit.framework */; };
 		D0D3CD5B1FAB16EE009571AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3CD5A1FAB16ED009571AA /* AppDelegate.swift */; };
 		D0D3CD5D1FAB16EE009571AA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3CD5C1FAB16EE009571AA /* MapViewController.swift */; };
 		D0D3CD601FAB16EE009571AA /* MapViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D3CD5E1FAB16EE009571AA /* MapViewStoryboard.storyboard */; };
@@ -26,6 +27,7 @@
 		D0141E581FAB4DC70067D977 /* WeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
 		D0141E5D1FAB56E80067D977 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		D0141E601FAB57420067D977 /* WeatherJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherJSON.swift; sourceTree = "<group>"; };
+		D0141E641FAB5DAE0067D977 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D0D3CD571FAB16ED009571AA /* SimpleWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D3CD5A1FAB16ED009571AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D3CD5C1FAB16EE009571AA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0141E651FAB5DAE0067D977 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,11 +80,20 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		D0141E631FAB5DAE0067D977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0141E641FAB5DAE0067D977 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0D3CD4E1FAB16ED009571AA = {
 			isa = PBXGroup;
 			children = (
 				D0D3CD591FAB16ED009571AA /* SimpleWeatherApp */,
 				D0D3CD581FAB16ED009571AA /* Products */,
+				D0141E631FAB5DAE0067D977 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +181,11 @@
 					D0D3CD561FAB16ED009571AA = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -354,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A4E4V9N95;
 				INFOPLIST_FILE = SimpleWeatherApp/Info.plist;
@@ -361,6 +379,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinochka.SimpleWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -370,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A4E4V9N95;
 				INFOPLIST_FILE = SimpleWeatherApp/Info.plist;
@@ -377,6 +398,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinochka.SimpleWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

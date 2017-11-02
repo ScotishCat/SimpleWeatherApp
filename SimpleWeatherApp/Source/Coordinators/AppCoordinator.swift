@@ -16,6 +16,7 @@ class AppCoordinator {
     var mainWindow: UIWindow!
     var navigationController: UINavigationController!
     var weatherAPI: WeatherAPI!
+    var locationManager: CLLocationManager!
     
     init(api: WeatherAPI) {
         self.weatherAPI = api
@@ -35,6 +36,12 @@ class AppCoordinator {
         self.navigationController = navController
         self.mainWindow.rootViewController = navController
         self.mainWindow.makeKeyAndVisible()
+        
+        let status = CLLocationManager.authorizationStatus()
+        if status == .notDetermined {
+            self.locationManager = CLLocationManager()
+            self.locationManager.requestWhenInUseAuthorization()
+        }
     }
 }
 

@@ -51,6 +51,6 @@ class WeatherDetailsController: UIViewController {
         temperatureLabel.text = String(format:"Temperature: %.2f", weather.mainParameters.temperature)
         humidityLabel.text = String(format:"Humidity: %.2f", weather.mainParameters.humidity)
         pressureLabel.text = String(format:"Pressure: %.2f", weather.mainParameters.pressure)
-        windSpeedLabel.text = String(format:"Wnd Speed: %.2f", weather.mainParameters.windSpeed)
+        windSpeedLabel.text = String(format:"Wind Speed: %.2f", weather.mainParameters.windSpeed)
     }
 }
